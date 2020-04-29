@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: linear-gradient(to right, #f857a6, #ff5858);
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.task-list {
+    background-color: #eee;
+    margin: 0.2em 0.5em;
+    padding: 20px 0px;
+    border-radius: 15px ;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.task {
+    background-color: #eee;
+    padding: 0.2em 1em;
+    border-top: 1px solid #bbb;
+}
+
+.task-btn {
+    font-size: small;
+    color: #ff69b4;
+    padding: 0.2em 0.5em;
+    margin: 0.5em;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+}
+
+.task-btn-todo:hover {
+    color: #ff1493;
+    border: 1px solid #ff1493;
+}
+
+.task-btn-todo:active {
+    color: #eee;
+    background-color: #ff1493;
+}
+
+.task-btn-complete {
+    color: green;
+    border-color:  green;
+}
+
+.task-btn-complete:hover {
+    color: darkgreen;
+    border-color: darkgreen;
+}
+
+.task-btn-complete:active {
+    color: #eee;
+    background-color: darkgreen;
+}
+
