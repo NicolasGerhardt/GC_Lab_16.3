@@ -4,14 +4,22 @@
     <p>a simple client-side only todo list!</p>
   </div>
 
+  <div class="filter-container">
+    <input class="task-input" type="text" placeholder="type here to filter your tasks" [(ngModel)]="taskFilterText" />
+    <button type="button" class="button btn-sm" (click)="toggleCompletedTasks()">
+      {{ hideCompletedTasks ? 'show completed tasks' : 'hide completed tasks' }}
+    </button>
+  </div>
+
   <div class="task" *ngFor="let task of tasks; index as i"
-    [ngClass]="hideCompletedTasks && task.completed ? 'task-complete-hide' : ''">
+    [ngClass]="hideCompletedTasks && task.completed ? 'task-complete-hide' : ''"
+    [ngClass]="taskFilterText.length > 0 && !task.text.toLowerCase().includes(taskFilterText.toLowerCase()) ? 'task-complete-hide' : ''">
     <button type="button" class="button btn-sm" (click)="toggleTask(task)"
       [ngClass]="task.completed ? 'task-btn-complete' : 'task-btn-todo'">
       {{ task.completed ? 'Done!' : 'Todo' }}
     </button>
     <span class="task-text" [ngClass]="i == editIndex ? 'task-text-edit' : ''"
-     [ngClass]="task.completed ? 'task-text-complete':''">
+      [ngClass]="task.completed ? 'task-text-complete':''">
       {{ task.text }}
     </span>
 
@@ -20,14 +28,15 @@
     <input class="button task-btn-right" type="button" value="X" (click)="removeTask(task)" />
   </div>
 
+  <span [ngClass]="getNumberOfUnfinishedTasks() > 0 ? 'cheers-hide' : 'cheers-show'">
+    <h1>Cheers Mate! No Todos!</h1>
+  </span>
+
   <div class="task-add-container">
-    <input class="task-input task-add-input" type="text" placeholder="Add task to your todo list" [(ngModel)]="newTask" />
+    <input class="task-input task-add-input" type="text" placeholder="Add task to your todo list"
+      [(ngModel)]="newTask" />
     <input class="button task-btn task-add-button" type="button" value="Add Task" (click)="addTask()" />
   </div>
 
-  <div id="filter-container">
-    <button type="button" class="button btn-sm" (click)="toggleCompletedTasks()">
-      {{ hideCompletedTasks ? 'show completed tasks' : 'hide completed tasks' }}
-    </button>
-  </div>
+
 </div>

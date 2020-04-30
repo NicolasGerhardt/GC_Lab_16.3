@@ -16,9 +16,13 @@ export class AppComponent {
     { text: "Clean Fish Tank", completed: false },
     { text: "Eat Dinner", completed: true },
   ];
+
+
   toggleTask = (task: Task) => {
     task.completed = !task.completed;
   };
+
+
   newTask: string = "";
   addTask = () => {
     if (this.newTask.length > 0) {
@@ -48,4 +52,17 @@ export class AppComponent {
     console.log(this.hideCompletedTasks);
   }
 
+  getNumberOfUnfinishedTasks = ():number => {
+    let numberOfUnfinishedTasks = 0;
+
+    for (const task of this.tasks) {
+      if(!task.completed) {
+        numberOfUnfinishedTasks++;
+      }
+    }
+
+    return numberOfUnfinishedTasks;
+  }
+
+  taskFilterText = '';
 }
