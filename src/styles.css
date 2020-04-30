@@ -1,16 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
     background: linear-gradient(to right, #f857a6, #ff5858);
     width: 80%;
     margin: auto;
     margin-top: 2em;
 }
 
+.title {
+    margin: auto;
+    width: 80%;
+}
+
+.title h1 {
+    text-decoration: underline;
+}
+
+.button {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    transition: box-shadow 0.3s ease;
+    border-radius: 5px;
+    padding: 0.2em 0.5em;
+    color: #ff69b4; 
+    margin: 0.5em;
+    border: 1px solid #ff69b4;
+}
+
+.button:hover {
+    color: #ff1493;
+    border: 1px solid #ff1493;
+    box-shadow: 2px 2px rgba(0,0,0,.3);
+  }
+
+  .button:active {
+
+        color: #eee;
+        background-color: #ff1493;
+
+  }
+
 .task-list {
     background-color: #eee;
     margin: 0.2em 0.5em;
     padding: 20px 0px;
-    border-radius: 15px ;
+    border-radius: 15px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -20,19 +53,14 @@ body {
     border-top: 1px solid #bbb;
 }
 
-.task-btn {
-    font-size: small;
-    color: #ff69b4;
-    padding: 0.2em 0.5em;
-    margin: 0.5em;
-    border: 1px solid #ff69b4;
-    border-radius: 5px;
+.task-text-complete {
+    text-decoration: line-through;
 }
 
-.task-btn-todo:hover {
-    color: #ff1493;
-    border: 1px solid #ff1493;
+.task-btn {
+    font-size: small;
 }
+
 
 .task-btn-todo:active {
     color: #eee;
@@ -54,3 +82,28 @@ body {
     background-color: darkgreen;
 }
 
+.add-task-container {
+    border-top: 1px solid #bbb;
+    padding: 0.5em;
+}
+.add-task-input {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: large;
+    display: block;
+    border: 1px solid #bbb;
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+}
+.add-task-button {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: large;
+    display: block;
+}
+
+.remove-task-btn {
+    float: right;
+}
