@@ -57,7 +57,7 @@ body {
     text-decoration: line-through;
 }
 
-.task-btn {
+.btn-sm {
     font-size: small;
 }
 
@@ -104,6 +104,12 @@ body {
     display: block;
 }
 
-.remove-task-btn {
+.btn-right-align {
     float: right;
+}
+
+#filter-container {
+    padding: 0.2em 0.5em;
+    margin: auto;
+    width: 100%;
 }
