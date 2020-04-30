@@ -51,6 +51,18 @@ body {
     background-color: #eee;
     padding: 0.2em 1em;
     border-top: 1px solid #bbb;
+    display: grid;
+    grid-template-columns: 2fr 20fr 1fr;
+}
+
+.task-text {
+    line-height: 1em;
+    margin: auto;
+}
+
+.task-btn-remove {
+    display:table-cell;
+    align-self: right;
 }
 
 .task-text-complete {
@@ -102,10 +114,6 @@ body {
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: large;
     display: block;
-}
-
-.btn-right-align {
-    float: right;
 }
 
 #filter-container {

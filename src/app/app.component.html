@@ -4,8 +4,8 @@
     <p>a simple client-side only todo list!</p>
   </div>
   
-
-  <div class="task" *ngFor="let task of tasks" [hidden]="task.completed && hideCompletedTasks">
+<div class="">
+  <div class="task flex-parent" *ngFor="let task of tasks" [hidden]="task.completed && hideCompletedTasks">
     <button type="button" class="button btn-sm" (click)="toggleTask(task)"
       [ngClass]="task.completed ? 'task-btn-complete' : 'task-btn-todo'">
       {{ task.completed ? 'Done!' : 'Todo' }}
@@ -13,8 +13,9 @@
     <span class="task-text" [ngClass]="task.completed ? 'task-text-complete':''">
       {{ task.text }}
     </span>
-    <input class="button btn-right-align" type="button" value="X" (click)="removeTask(task)" />
+    <input class="button task-btn-remove" type="button" value="X" (click)="removeTask(task)" />
   </div>
+</div>
 
   <div class="add-task-container">
     <input class="add-task-input" type="text" placeholder="Add task to your todo list" [(ngModel)]="newTask" />
