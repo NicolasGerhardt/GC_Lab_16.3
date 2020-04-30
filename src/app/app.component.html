@@ -12,8 +12,9 @@
   </div>
 
   <div class="task" *ngFor="let task of tasks; index as i"
-    [ngClass]="hideCompletedTasks && task.completed ? 'task-complete-hide' : ''"
-    [ngClass]="taskFilterText.length > 0 && !task.text.toLowerCase().includes(taskFilterText.toLowerCase()) ? 'task-complete-hide' : ''">
+    [ngClass]="(hideCompletedTasks && task.completed) ||
+    (taskFilterText.length > 0 && !task.text.toLowerCase().includes(taskFilterText.toLowerCase()))  
+    ? 'task-complete-hide' : ''">
     <button type="button" class="button btn-sm" (click)="toggleTask(task)"
       [ngClass]="task.completed ? 'task-btn-complete' : 'task-btn-todo'">
       {{ task.completed ? 'Done!' : 'Todo' }}
