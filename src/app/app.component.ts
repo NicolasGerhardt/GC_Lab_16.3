@@ -27,14 +27,25 @@ export class AppComponent {
     }
   }
 
-  removeTask = (task: Task) => {
+  removeTask = (task:Task) => {
     this.tasks = this.tasks.filter( t => t != task);
+  }
+
+  editIndex:number = -1;
+
+  editTask = (index:number) => {
+    if (this.editIndex == -1) {
+      this.editIndex = index;
+    } else {
+      this.editIndex = -1;
+    }
   }
 
   hideCompletedTasks:boolean = true;
 
   toggleCompletedTasks = () => {
     this.hideCompletedTasks = !this.hideCompletedTasks;
+    console.log(this.hideCompletedTasks);
   }
 
 }

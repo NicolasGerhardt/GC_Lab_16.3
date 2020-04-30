@@ -30,14 +30,12 @@ body {
     color: #ff1493;
     border: 1px solid #ff1493;
     box-shadow: 2px 2px rgba(0,0,0,.3);
-  }
+}
 
-  .button:active {
-
+.button:active {
         color: #eee;
         background-color: #ff1493;
-
-  }
+}
 
 .task-list {
     background-color: #eee;
@@ -52,15 +50,24 @@ body {
     padding: 0.2em 1em;
     border-top: 1px solid #bbb;
     display: grid;
-    grid-template-columns: 2fr 20fr 1fr;
+    grid-template-columns: 2fr 20fr 2fr 1fr;
+}
+
+.task-complete-hide {
+    display: none;
 }
 
 .task-text {
     line-height: 1em;
-    margin: auto;
+    margin: auto 0;
 }
 
-.task-btn-remove {
+.task-text-edit {
+    display: none;
+}
+
+
+.task-btn-right {
     display:table-cell;
     align-self: right;
 }
@@ -94,13 +101,12 @@ body {
     background-color: darkgreen;
 }
 
-.add-task-container {
+.task-add-container {
     border-top: 1px solid #bbb;
     padding: 0.5em;
 }
-.add-task-input {
+.task-input {
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: large;
     display: block;
     border: 1px solid #bbb;
     padding: 0.2em 0.5em;
@@ -110,7 +116,17 @@ body {
     width: 100%;
     margin: auto;
 }
-.add-task-button {
+
+.task-add-input {
+    font-size: large;
+}
+
+.task-input-edit {
+    display: none;
+}
+
+
+.task-add-button {
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: large;
     display: block;
